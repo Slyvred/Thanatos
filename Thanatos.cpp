@@ -73,6 +73,7 @@ void Thanatos::Init()
 	// Config
 	reader = new INIReader("Thanatos.ini");
 	config.Nametag = reader->GetString("KNIVES", "Nametag", "0");
+	config.C4Nametag = reader->GetString("KNIVES", "C4Nametag", "0");
 	config.KnifeCT = reader->GetInteger("KNIVES", "KnifeCT", 0);
 	config.SkinCT = reader->GetInteger("KNIVES", "SkinCT", 0);
 	config.KnifeT = reader->GetInteger("KNIVES", "KnifeT", 0);

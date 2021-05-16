@@ -382,7 +382,7 @@ void Thanatos::Skinchanger(ClientFrameStage_t stage)
         SetNameTag(currentWeapon, weaponSkin.nametag); // Skin changer for the weapons
         SetPaintKit(currentWeapon, weaponSkin.paintkit, NULL);
         SetStatTrak(currentWeapon, weaponSkin.stattrak, playerInfo.xuidlow);
-        //if (weaponIndex == WEAPON_C4) SetNameTag(currentWeapon, "Big Yeet");
+        if (weaponIndex == WEAPON_C4) SetNameTag(currentWeapon, config.C4Nametag);
     }
 
     // Getting the model in use and changing it here if it's our knife
