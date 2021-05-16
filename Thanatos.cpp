@@ -78,7 +78,7 @@ void Thanatos::Init()
 	config.KnifeT = reader->GetInteger("KNIVES", "KnifeT", 0);
 	config.SkinT = reader->GetInteger("KNIVES", "SkinT", 0);
 
-	// Dlls
+	// Getting their base addresses
 	client = (intptr_t)GetModuleHandle("client.dll");
 	engine = (intptr_t)GetModuleHandle("engine.dll");
 
