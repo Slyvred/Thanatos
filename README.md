@@ -1,8 +1,140 @@
 # Tanatos
 An internal C++ skinchanger featuring sdk and hooks.
 
-# Config
+## Config
 To use it place the "Tanatos.ini" config in your csgo folder and press "end" to eject.
 
-# Note
+## Tanatos.ini:
+[KNIVES]
+KnifeCT = 500
+SkinCT = 573
+KnifeT = 508
+SkinT = 569
+
+
+[SKINS]
+AK47 = 639
+AUG = 455
+AWP  = 279
+BIZON = 542
+CZ75A = 687
+DEAGLE = 805
+ELITE = 903
+FAMAS = 626
+FIVESEVEN = 837
+G3SG1 = 712
+GALILAR = 494
+GLOCK = 38
+HKP2000 = 389
+M249 = 496
+M4A1 = 985
+M4A1_SILENCER = 587
+MAC10 = 965
+MAG7 = 961
+MP5_SD = 974
+MP7 = 696
+MP9 = 734
+NEGEV = 514
+NOVA = 537
+P250  = 968
+P90 = 359
+REVOLVER = 12
+SAWEDOFF = 953
+SCAR20  = 597
+SG556  = 686
+SSG08 = 899
+TEC9 = 791
+UMP45 = 916
+USP_SILENCER = 705
+XM1014 = 557
+
+
+[STATTRAK]
+AK47 = 420
+AUG = 255
+AWP  = 2048
+BIZON = 0
+CZ75A = 0
+DEAGLE = 667
+ELITE = 0
+FAMAS = 626
+FIVESEVEN = 0
+G3SG1 = 0
+GALILAR = 0
+GLOCK = 0
+HKP2000 = 0
+M249 = 0
+M4A1 = 256
+M4A1_SILENCER = 420
+MAC10 = 0
+MAG7 = 0
+MP5_SD = 0
+MP7 = 0
+MP9 = 0
+NEGEV = 0
+NOVA = 0
+P250  = 69
+P90 = 0
+REVOLVER = 128
+SAWEDOFF = 0
+SCAR20  = 0
+SG556  = 007
+SSG08 = 1337
+TEC9 = 0
+UMP45 = 0
+USP_SILENCER = 666
+XM1014 = 0
+
+
+[NAMETAG]
+AK47 = 0
+AUG = 0
+AWP  = 0
+BIZON = 0
+CZ75A = 0
+DEAGLE = 0
+ELITE = 0
+FAMAS = 0
+FIVESEVEN = 0
+G3SG1 = 0
+GALILAR = 0
+GLOCK = 0
+HKP2000 = 0
+M249 = 0
+M4A1 = 0
+M4A1_SILENCER = 0
+MAC10 = 0
+MAG7 = 0
+MP5_SD = 0
+MP7 = 0
+MP9 = 0
+NEGEV = 0
+NOVA = 0
+P250  = 0
+P90 = 0
+REVOLVER = 0
+SAWEDOFF = 0
+SCAR20  = 0
+SG556  = 0
+SSG08 = 0
+TEC9 = 0
+UMP45 = 0
+USP_SILENCER = 0
+XM1014 = 0
+
+[HELP FOR KNIVES IDS]
+BAYONET = 500
+CSS = 503
+FLIP = 505
+GUT = 506
+KARAMBIT = 507
+M9_BAYONET = 508
+TACTICAL = 509
+GYPSY_JACKKNIFE = 520
+STILETTO = 522
+
+[HELP FOR SKINS IDS]
+->Go on csgostash.com and look for the catalog finish
+
+## Note
 To use it in manual mapping you will have to modify some of the project settings in VS.
