@@ -90,7 +90,8 @@ void Thanatos::Init()
 	Cvar = (ICvar*)GetInterface("vstdlib.dll", "VEngineCvar007");
 	clientClass = BaseClientDLL->GetAllClasses();
 
-	GetSignatures(), GetNetvars(clientClass);
+	// Grapping all of our signatures and netvars + setting convars on injection
+	GetSignatures(), GetNetvars(clientClass), SetConvars();
 
 	// Hooking CUserCmd for the rank revealer
 	clientMode = **(void***)((*(uintptr_t**)(BaseClientDLL))[10] + 0x5);
