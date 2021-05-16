@@ -24,6 +24,7 @@
     <ProjectGuid>{97e5780c-6bfc-4212-bd7a-65e09a9198ea}</ProjectGuid>
     <RootNamespace>Tanatos</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Thanatos</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -153,7 +154,7 @@
     <ClCompile Include="offsets.cpp" />
     <ClCompile Include="PATTERN SCANNER\PatternScanner.cpp" />
     <ClCompile Include="SDK\Interface.cpp" />
-    <ClCompile Include="Tanatos.cpp" />
+    <ClCompile Include="Thanatos.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h" />
@@ -176,7 +177,7 @@
     <ClInclude Include="SDK\SDKIncludes.h" />
     <ClInclude Include="SDK\VirtualMethod.h" />
     <ClInclude Include="Skinchanger.h" />
-    <ClInclude Include="Tanatos.h" />
+    <ClInclude Include="Thanatos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

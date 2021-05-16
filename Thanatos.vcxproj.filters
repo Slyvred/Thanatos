@@ -39,9 +39,6 @@
     <ClCompile Include="PATTERN SCANNER\PatternScanner.cpp">
       <Filter>Fichiers d%27en-tête\Pattern Scanner</Filter>
     </ClCompile>
-    <ClCompile Include="Tanatos.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
@@ -56,6 +53,9 @@
     </ClCompile>
     <ClCompile Include="Netvars manager\netvars_manager.cpp">
       <Filter>Fichiers d%27en-tête\Netvars Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Thanatos.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,9 +89,6 @@
     <ClInclude Include="SDK\SDKIncludes.h">
       <Filter>Fichiers d%27en-tête\SDK</Filter>
     </ClInclude>
-    <ClInclude Include="Tanatos.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Hooks\Hooks.h">
       <Filter>Fichiers d%27en-tête\Hooks</Filter>
     </ClInclude>
@@ -121,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="SDK\ICvar.h">
       <Filter>Fichiers d%27en-tête\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Thanatos.h">
+      <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

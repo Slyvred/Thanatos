@@ -1,8 +1,8 @@
-#include "Tanatos.h"
+#include "Thanatos.h"
 #include "Inih/INIReader.h"
 #include "SDK/ItemDefinitionIndex.h"
 
-extern Tanatos tanatos;
+extern Thanatos thanatos;
 extern INIReader* reader;
 
 // Making these structs so we don't have to deal with a shit ton of variables
@@ -210,7 +210,7 @@ skinInfo GetWeaponSkin(const short weaponIndex)
     return skin;
 }
 
-int Tanatos::GetModelIndex(const short itemIndex)
+int Thanatos::GetModelIndex(const short itemIndex)
 {
     int ret = 0;
     switch (itemIndex)
@@ -341,7 +341,7 @@ void SetNameTag(intptr_t dwWeapon, std::string nametag)
         *(std::string*)(dwWeapon + netvars::m_szCustomName) = nametag;
 }
 
-void Tanatos::Skinchanger(ClientFrameStage_t stage)
+void Thanatos::Skinchanger(ClientFrameStage_t stage)
 {
     skinInfo weaponSkin;
     ModelInfos model;

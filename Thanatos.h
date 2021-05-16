@@ -6,7 +6,7 @@
 #include "Inih/INIReader.h"
 #include "Inih/ini.h"
 
-class Tanatos
+class Thanatos
 {
 public:
 	struct Config
@@ -20,7 +20,8 @@ public:
 
 public:
 	// Global vars
-	intptr_t client, engine = NULL;
+	intptr_t client = NULL;
+	intptr_t engine = NULL;
 	ClientClass* clientClass = nullptr;
 	IEngineClient* EngineClient = nullptr;
 	IBaseClientDLL* BaseClientDLL = nullptr;

@@ -1,19 +1,19 @@
 #include <Windows.h>
-#include "Tanatos.h"
+#include "Thanatos.h"
 
-Tanatos tanatos;
+Thanatos thanatos;
 
 intptr_t Main(HMODULE hMod)
 {
-	tanatos.Init();
+	thanatos.Init();
 
 	while (!GetAsyncKeyState(VK_END))
 	{
-		tanatos.Run();
+		thanatos.Run();
 		Sleep(1);
 	}
 
-	tanatos.Cleanup();
+	thanatos.Cleanup();
 	FreeLibraryAndExitThread(hMod, 0);
 }
 

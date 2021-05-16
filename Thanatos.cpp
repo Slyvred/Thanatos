@@ -1,9 +1,9 @@
-#include "Tanatos.h"
+#include "Thanatos.h"
 #include "Hooks/Hooks.h"
 #include "Skinchanger.h"
 
 // For the hooks
-extern Tanatos tanatos;
+extern Thanatos thanatos;
 
 // CUserCmd hook
 char* clientModeInterface = nullptr;
@@ -20,14 +20,14 @@ void __stdcall hkCreateMove(float sampleTime, CUserCmd* cmd) // Actual hooked fu
 {
 	// Rank reveal
 	if (cmd->buttons & CUserCmd::IN_SCORE)
-		tanatos.BaseClientDLL->dispatchUserMessage(50, 0, 0, nullptr);
+		thanatos.BaseClientDLL->dispatchUserMessage(50, 0, 0, nullptr);
 
 	oCreateMove(sampleTime, cmd); // restoring original function
 }
 
 void __stdcall hkFrameStageNotify(ClientFrameStage_t curStage) // Actual hooked function
 {
-	tanatos.Skinchanger(curStage);
+	thanatos.Skinchanger(curStage);
 	oFrameStageNotify(curStage); // restoring original function
 }
 
@@ -42,7 +42,7 @@ struct Convars // Storing them in a struct to avoid redefinition error
 	ConVar* viewmodel_fov = nullptr;
 }cvars;
 
-void Tanatos::SetConvars()
+void Thanatos::SetConvars()
 {
 	while (!EngineClient->isInGame()) continue;
 
@@ -68,10 +68,10 @@ void Tanatos::SetConvars()
 	cvars.viewmodel_fov->setValue(68);
 }
 
-void Tanatos::Init()
+void Thanatos::Init()
 {
 	// Config
-	reader = new INIReader("Tanatos.ini");
+	reader = new INIReader("Thanatos.ini");
 	config.Nametag = reader->GetString("KNIVES", "Nametag", "0");
 	config.KnifeCT = reader->GetInteger("KNIVES", "KnifeCT", 0);
 	config.SkinCT = reader->GetInteger("KNIVES", "SkinCT", 0);
@@ -103,10 +103,10 @@ void Tanatos::Init()
 
 	// Telling the user we're killing it
 	EngineClient->clientCmdUnrestricted("clear");
-	EngineClient->clientCmdUnrestricted("echo Tanatos Initialized !");
+	EngineClient->clientCmdUnrestricted("echo Thanatos Initialized !");
 }
 
-void Tanatos::Run() // Runs in a while loop
+void Thanatos::Run() // Runs in a while loop
 {
 	if (!EngineClient->isInGame() && !EngineClient->IsHLTV()) // Setting the convars once when we enter a game
 		SetConvars();
@@ -117,7 +117,7 @@ void Tanatos::Run() // Runs in a while loop
 	if (!localPlayer->IsValid()) return;
 }
 
-void Tanatos::Cleanup() // The name says it all
+void Thanatos::Cleanup() // The name says it all
 {
 	baseClientDLLVMT->UnHook();
 	clientModeVMT->UnHook();

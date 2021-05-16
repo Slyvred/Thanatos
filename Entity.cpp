@@ -1,7 +1,7 @@
 #include "Entity.h"
 #include "offsets.h"
-#include "Tanatos.h"
-extern Tanatos tanatos;
+#include "Thanatos.h"
+extern Thanatos thanatos;
 
 int Entity::GetTeam()
 {
@@ -22,7 +22,7 @@ bool Entity::IsValid()
 short Entity::GetActiveWeapon()
 {
 	intptr_t activeWeapon = *(intptr_t*)(this + netvars::m_hActiveWeapon);
-	activeWeapon = (intptr_t)tanatos.ClientEntityList->GetClientEntityFromHandle(activeWeapon);
+	activeWeapon = (intptr_t)thanatos.ClientEntityList->GetClientEntityFromHandle(activeWeapon);
 
 	return activeWeapon ? *(short*)(activeWeapon + netvars::m_iItemDefinitionIndex) : NULL; // If our weapon entity isn't null we return its itemDefinitionIndex, else we return null
 }
