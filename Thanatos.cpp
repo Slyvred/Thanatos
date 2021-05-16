@@ -119,10 +119,12 @@ void Thanatos::Run() // Runs in a while loop
 
 void Thanatos::Cleanup() // The name says it all
 {
+	// Unhooking
 	baseClientDLLVMT->UnHook();
 	clientModeVMT->UnHook();
 	EngineClient->clientCmdUnrestricted("cl_fullupdate");
 
+	// Deleting global pointers
 	delete clientModeVMT;
 	delete baseClientDLLVMT;
 	delete reader;
