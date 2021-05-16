@@ -343,6 +343,8 @@ void SetNameTag(intptr_t dwWeapon, std::string nametag)
 
 void Thanatos::Skinchanger(ClientFrameStage_t stage)
 {
+    if (!localPlayer || !EngineClient->isInGame()) return;
+
     skinInfo weaponSkin;
     ModelInfos model;
     player_info_t playerInfo;
