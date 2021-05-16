@@ -10,7 +10,7 @@ intptr_t Main(HMODULE hMod)
 	while (!GetAsyncKeyState(VK_END))
 	{
 		thanatos.Run();
-		Sleep(1);
+		Sleep(5);
 	}
 
 	thanatos.Cleanup();
