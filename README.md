@@ -1,10 +1,10 @@
-# Tanatos
+# Thanatos
 An internal C++ skinchanger featuring sdk and hooks.
 
 ## Config
-To use it place the "Tanatos.ini" config in your csgo folder and press "end" to eject.
+To use it place the "Thanatos.ini" config in your csgo folder and press "end" to eject.
 
-## Tanatos.ini:
+## Thanatos.ini:
 [KNIVES]
 KnifeCT = 500
 SkinCT = 573
