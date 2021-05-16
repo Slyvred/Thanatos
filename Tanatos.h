@@ -26,7 +26,7 @@ public:
 	IBaseClientDLL* BaseClientDLL = nullptr;
 	IModelInfoClient* ModelInfoClient = nullptr;
 	IClientEntityList* ClientEntityList = nullptr;
-	//ICvar* Cvar = nullptr;
+	ICvar* Cvar = nullptr;
 	Entity* localPlayer = nullptr;
 
 public:
@@ -35,7 +35,7 @@ public:
 	void Run();
 	void Cleanup();
 
-	//void SetConvars();
+	void SetConvars();
 	void Skinchanger(ClientFrameStage_t curStage);
 	int GetModelIndex(const short itemIndex);
 };
