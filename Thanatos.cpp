@@ -105,6 +105,7 @@ void Thanatos::Init()
 	// Telling the user we're killing it
 	EngineClient->clientCmdUnrestricted("clear");
 	EngineClient->clientCmdUnrestricted("echo Thanatos Initialized !");
+	EngineClient->clientCmdUnrestricted("cl_fullupdate");
 }
 
 void Thanatos::Run() // Runs in a while loop
