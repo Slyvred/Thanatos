@@ -204,6 +204,9 @@ skinInfo GetWeaponSkin(const short weaponIndex)
         skin.stattrak = reader->GetInteger("STATTRAK", "CZ75A", 0);
         skin.nametag = reader->GetString("NAMETAG", "CZ75A", "0");
         break;
+    case WEAPON_C4:
+        skin.nametag = reader->GetString("NAMETAG", "C4", "0");
+        break;
     default:
         break;
     }
@@ -311,34 +314,34 @@ int Thanatos::GetModelIndex(const short itemIndex)
     return ret;
 }
 
-void SetStatTrak(intptr_t dwWeapon, int kills, int xuidlow)
+void SetStatTrak(intptr_t weapon, int kills, int xuidlow)
 {
     if (!kills) return;
-    *(int*)(dwWeapon + netvars::m_iAccountID) = xuidlow;
-    *(int*)(dwWeapon + netvars::m_iEntityQuality) = 9;
-    *(int*)(dwWeapon + netvars::m_nFallbackStatTrak) = kills;
+    *(int*)(weapon + netvars::m_iAccountID) = xuidlow;
+    *(int*)(weapon + netvars::m_iEntityQuality) = 9;
+    *(int*)(weapon + netvars::m_nFallbackStatTrak) = kills;
 }
 
-void SetModel(intptr_t dwWeapon, int modelIndex, int itemIndex)
+void SetModel(intptr_t weapon, int modelIndex, int itemIndex)
 {
-    *(int*)(dwWeapon + netvars::m_nModelIndex) = modelIndex;
-    *(int*)(dwWeapon + netvars::m_iEntityQuality) = 3; // 3 = knife
-    *(short*)(dwWeapon + netvars::m_iItemDefinitionIndex) = itemIndex;
+    *(int*)(weapon + netvars::m_nModelIndex) = modelIndex;
+    *(int*)(weapon + netvars::m_iEntityQuality) = 3; // 3 = knife
+    *(short*)(weapon + netvars::m_iItemDefinitionIndex) = itemIndex;
 }
 
-void SetPaintKit(intptr_t dwWeapon, int skin, int seed)
+void SetPaintKit(intptr_t weapon, int skin, int seed)
 {
-    *(int*)(dwWeapon + netvars::m_iItemIDHigh) = -1;
-    *(float*)(dwWeapon + netvars::m_flFallbackWear) = 0.f;
-    *(int*)(dwWeapon + netvars::m_nFallbackPaintKit) = skin;
+    *(int*)(weapon + netvars::m_iItemIDHigh) = -1;
+    *(float*)(weapon + netvars::m_flFallbackWear) = 0.f;
+    *(int*)(weapon + netvars::m_nFallbackPaintKit) = skin;
 
-    if (seed) *(int*)(dwWeapon + netvars::m_nFallbackSeed) = seed;
+    if (seed) *(int*)(weapon + netvars::m_nFallbackSeed) = seed;
 }
 
-void SetNameTag(intptr_t dwWeapon, std::string nametag)
+void SetNameTag(intptr_t weapon, std::string nametag)
 {
     if (nametag != (std::string)"0")
-        *(std::string*)(dwWeapon + netvars::m_szCustomName) = nametag;
+        *(std::string*)(weapon + netvars::m_szCustomName) = nametag;
 }
 
 void Thanatos::Skinchanger(ClientFrameStage_t stage)
@@ -361,28 +364,26 @@ void Thanatos::Skinchanger(ClientFrameStage_t stage)
 
         if (weaponIndex == WEAPON_KNIFE || weaponIndex == WEAPON_KNIFE_T || weaponIndex == config.KnifeCT || weaponIndex == config.KnifeT) // Knife changer
         {
-            weaponSkin.nametag = config.Nametag;
-
             if (weaponIndex == WEAPON_KNIFE || weaponIndex == config.KnifeCT)
             {
                 model.itemDefIndex = config.KnifeCT;
                 model.modelIndex = GetModelIndex(config.KnifeCT);
                 weaponSkin.paintkit = config.SkinCT;
             }
-            else if (weaponIndex == WEAPON_KNIFE_T || weaponIndex == config.KnifeT)
+            else //if (weaponIndex == WEAPON_KNIFE_T || weaponIndex == config.KnifeT)
             {
                 model.itemDefIndex = config.KnifeT;
                 model.modelIndex = GetModelIndex(config.KnifeT);
                 weaponSkin.paintkit = config.SkinT;
             }
 
+            weaponSkin.nametag = config.Nametag;
             SetModel(currentWeapon, model.modelIndex, model.itemDefIndex);
         }
 
         SetNameTag(currentWeapon, weaponSkin.nametag); // Skin changer for the weapons
         SetPaintKit(currentWeapon, weaponSkin.paintkit, NULL);
         SetStatTrak(currentWeapon, weaponSkin.stattrak, playerInfo.xuidlow);
-        if (weaponIndex == WEAPON_C4) SetNameTag(currentWeapon, config.C4Nametag);
     }
 
     // Getting the model in use and changing it here if it's our knife

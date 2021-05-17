@@ -12,7 +12,6 @@ public:
 	struct Config
 	{
 		std::string Nametag = (std::string)"0";
-		std::string C4Nametag = (std::string)"0";
 		int KnifeCT = 0;
 		int SkinCT = 0;
 		int KnifeT = 0;
