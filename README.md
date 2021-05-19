@@ -136,6 +136,3 @@ STILETTO = 522
 
 [HELP FOR SKINS IDS]
 ->Go on csgostash.com and look for the catalog finish
-
-## Note
-To use it in manual mapping you will have to modify some of the project settings in VS.
