@@ -1,5 +1,6 @@
 #include <Windows.h>
 #include "Thanatos.h"
+#define WIN32_LEAN_AND_MEAN
 
 Thanatos thanatos;
 

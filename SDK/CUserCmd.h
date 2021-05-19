@@ -1,5 +1,7 @@
 #pragma once
 
+struct vec3 { float x, y, z; };
+
 struct CUserCmd 
 {
     enum 
@@ -20,8 +22,8 @@ struct CUserCmd
     void* vmt;
     int commandNumber;
     int tickCount;
-    void* viewangles;
-    void* aimdirection;
+    vec3 viewangles;
+    vec3 aimdirection;
     float forwardmove;
     float sidemove;
     float upmove;
