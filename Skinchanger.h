@@ -19,15 +19,6 @@ struct ModelInfos
     short itemDefIndex = 0;
 };
 
-//struct Config
-//{
-//    std::string Nametag = reader->GetString("KNIVES", "Nametag", "0");
-//    int KnifeCT = reader->GetInteger("KNIVES", "KnifeCT", 0);
-//    int SkinCT = reader->GetInteger("KNIVES", "SkinCT", 0);
-//    int KnifeT = reader->GetInteger("KNIVES", "KnifeT", 0);
-//    int SkinT = reader->GetInteger("KNIVES", "SkinT", 0);
-//}config;
-
 skinInfo GetWeaponSkin(const short weaponIndex)
 {
     // set our desired weapon skin values here
@@ -364,13 +355,13 @@ void Thanatos::Skinchanger(ClientFrameStage_t stage)
 
         if (weaponIndex == WEAPON_KNIFE || weaponIndex == WEAPON_KNIFE_T || weaponIndex == config.KnifeCT || weaponIndex == config.KnifeT) // Knife changer
         {
-            if (weaponIndex == WEAPON_KNIFE || weaponIndex == config.KnifeCT)
+            if (weaponIndex == WEAPON_KNIFE || weaponIndex == config.KnifeCT) // CT Side Knife
             {
                 model.itemDefIndex = config.KnifeCT;
                 model.modelIndex = GetModelIndex(config.KnifeCT);
                 weaponSkin.paintkit = config.SkinCT;
             }
-            else //if (weaponIndex == WEAPON_KNIFE_T || weaponIndex == config.KnifeT)
+            else //if (weaponIndex == WEAPON_KNIFE_T || weaponIndex == config.KnifeT) // T Side Knife
             {
                 model.itemDefIndex = config.KnifeT;
                 model.modelIndex = GetModelIndex(config.KnifeT);
