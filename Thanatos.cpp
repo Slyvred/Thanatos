@@ -125,6 +125,8 @@ void Thanatos::Cleanup() // The name says it all
 	// Unhooking
 	baseClientDLLVMT->UnHook();
 	clientModeVMT->UnHook();
+
+	// Removing the skins
 	EngineClient->clientCmdUnrestricted("cl_fullupdate");
 
 	// Deleting global pointers
