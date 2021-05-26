@@ -77,10 +77,10 @@ void Thanatos::AgentChanger(ClientFrameStage_t curStage)
 
 	switch (localPlayer->GetTeam())
 	{
-	case 1:
+	case 2: // Terrorists
         agentIndex = ModelInfoClient->GetModelIndex("models/player/custom_player/legacy/tm_professional_varf4.mdl");
 		break;
-	case 2:
+	case 3: // Antiterrorists
         agentIndex = ModelInfoClient->GetModelIndex("models/player/custom_player/legacy/ctm_st6_variantm.mdl");
 		break;
 	default:
