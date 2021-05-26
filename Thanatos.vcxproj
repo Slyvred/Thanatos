@@ -159,6 +159,7 @@
     <ClCompile Include="Thanatos.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Agentchanger.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Hooks\Hooks.h" />
     <ClInclude Include="Inih\ini.h" />

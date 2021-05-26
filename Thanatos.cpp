@@ -1,5 +1,6 @@
 #include "Thanatos.h"
 #include "Hooks/Hooks.h"
+#include "Agentchanger.h"
 #include "Skinchanger.h"
 
 // For the hooks
@@ -27,7 +28,12 @@ void __stdcall hkCreateMove(float sampleTime, CUserCmd* cmd) // Actual hooked fu
 
 void __stdcall hkFrameStageNotify(ClientFrameStage_t curStage) // Actual hooked function
 {
-	thanatos.Skinchanger(curStage);
+	if (curStage == ClientFrameStage_t::FRAME_NET_UPDATE_POSTDATAUPDATE_START)
+	{
+		thanatos.Skinchanger(curStage);
+		thanatos.AgentChanger(curStage);
+	}
+
 	oFrameStageNotify(curStage); // restoring original function
 }
 
