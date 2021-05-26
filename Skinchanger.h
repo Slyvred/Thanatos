@@ -335,7 +335,7 @@ void SetNameTag(intptr_t weapon, std::string nametag)
         *(std::string*)(weapon + netvars::m_szCustomName) = nametag;
 }
 
-void Thanatos::Skinchanger(ClientFrameStage_t stage)
+void Thanatos::Skinchanger()
 {
     if (!localPlayer || !EngineClient->isInGame()) return;
 

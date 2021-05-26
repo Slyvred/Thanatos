@@ -37,7 +37,7 @@ public:
 	void Cleanup();
 
 	void SetConvars();
-	void Skinchanger(ClientFrameStage_t curStage);
-	void AgentChanger(ClientFrameStage_t curStage);
+	void Skinchanger();
+	void AgentChanger();
 	int GetModelIndex(const short itemIndex);
 };

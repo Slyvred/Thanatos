@@ -30,8 +30,8 @@ void __stdcall hkFrameStageNotify(ClientFrameStage_t curStage) // Actual hooked 
 {
 	if (curStage == ClientFrameStage_t::FRAME_NET_UPDATE_POSTDATAUPDATE_START)
 	{
-		thanatos.Skinchanger(curStage);
-		thanatos.AgentChanger(curStage);
+		thanatos.Skinchanger();
+		thanatos.AgentChanger();
 	}
 
 	oFrameStageNotify(curStage); // restoring original function

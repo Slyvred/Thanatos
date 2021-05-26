@@ -2,6 +2,8 @@
 #include "Inih/INIReader.h"
 #include "SDK/ItemDefinitionIndex.h"
 
+#define TEAM_TERRORIST 2
+#define TEAM_ANTI_TERRORIST 3
 /*constexpr std::array models
 {
     "models/player/custom_player/legacy/ctm_fbi_variantb.mdl",
@@ -70,20 +72,24 @@
 
 extern Thanatos thanatos;
 
-void Thanatos::AgentChanger(ClientFrameStage_t curStage)
+void Thanatos::AgentChanger()
 {
-	if (!localPlayer || !EngineClient->isInGame()) return;
-    int agentIndex = *(int*)(localPlayer + netvars::m_nModelIndex);
+    if (!localPlayer || !EngineClient->isInGame()) return;
 
-	switch (localPlayer->GetTeam())
-	{
-	case 2: // Terrorists
+    int agentIndex;
+    int* modelIndex = (int*)(localPlayer + netvars::m_nModelIndex);
+
+    switch (localPlayer->GetTeam())
+    {
+    case TEAM_TERRORIST:
         agentIndex = ModelInfoClient->GetModelIndex("models/player/custom_player/legacy/tm_professional_varf4.mdl");
-		break;
-	case 3: // Antiterrorists
+        break;
+    case TEAM_ANTI_TERRORIST:
         agentIndex = ModelInfoClient->GetModelIndex("models/player/custom_player/legacy/ctm_st6_variantm.mdl");
-		break;
-	default:
-		break;
-	}
+        break;
+    default:
+        break;
+    }
+
+    if (agentIndex) *modelIndex = agentIndex;
 }
